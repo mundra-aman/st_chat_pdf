@@ -5,11 +5,23 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
+
+from langchain.chains import ConversationalRetrievalChain
+
 from langchain.llms import OpenAI
 from langchain.callbacks import get_openai_callback
 from streamlit.components.v1 import html
 import streamlit.components.v1 as components
 from streamlit_chat import message
+
+import os
+import sys
+
+#from langchain_community.document_loaders import TextLoader, DirectoryLoader, PyPDFLoader, Docx2txtLoader
+#from langchain_community.vectorstores import Chroma
+#from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+
+os.environ["OPENAI_API_KEY"] = "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"
 
 
 
@@ -69,7 +81,7 @@ if pdf is not None:
   knowledge_base = FAISS.from_texts(chunks, embeddings)
 
   # show user input
-  st.text_input("Ask a question about your PDF:", key="user")
+  st.text_input("Ask a question about your PDF:", key="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")
   st.button("Send", on_click=send_click)
 
    # col1.write(response)
