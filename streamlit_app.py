@@ -68,17 +68,18 @@ if pdf is not None:
   
 
   # split into chunks
-  text_splitter = CharacterTextSplitter(
-    separator="\n",
-    chunk_size=1000,
-    chunk_overlap=200,
-    length_function=len
-  )
+  #text_splitter = CharacterTextSplitter(
+  #  separator="\n",
+  #  chunk_size=1000,
+  #  chunk_overlap=200,
+  #  length_function=len
+  #)
+  text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=10)
   chunks = text_splitter.split_text(text)
 
   # create embeddings
-  embeddings = OpenAIEmbeddings()
-  knowledge_base = FAISS.from_texts(chunks, embeddings)
+  #embeddings = OpenAIEmbeddings()
+  knowledge_base = FAISS.from_texts(chunks, embedding=OpenAIEmbeddings())
 
   # show user input
   st.text_input("Ask a question about your PDF:", key="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")
