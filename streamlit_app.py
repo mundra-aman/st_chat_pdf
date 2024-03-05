@@ -19,7 +19,7 @@ import sys
 
 #from langchain_community.document_loaders import TextLoader, DirectoryLoader, PyPDFLoader, Docx2txtLoader
 #from langchain_community.vectorstores import Chroma
-#from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
 os.environ["OPENAI_API_KEY"] = "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"
 
