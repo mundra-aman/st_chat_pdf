@@ -18,3 +18,4 @@ faiss_cpu
 chainlit
 ctransformers
 langchain_openai
+langchain-community
