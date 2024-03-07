@@ -77,7 +77,7 @@ if pdf is not None:
   #  chunk_overlap=200,
   #  length_function=len
   #)
-  text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=10)
+  text_splitter = CharacterTextSplitter(chunk_size=800, chunk_overlap=0)
   chunks = text_splitter.split_text(text)
 
   # create embeddings
