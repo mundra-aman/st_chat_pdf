@@ -8,8 +8,11 @@ from langchain.chains.question_answering import load_qa_chain
 
 from langchain.chains import ConversationalRetrievalChain
 
-from langchain.llms import OpenAI
-from langchain.callbacks import get_openai_callback
+#from langchain.llms import OpenAI
+from langchain_community.llms import OpenAI
+#from langchain.callbacks import get_openai_callback
+from langchain_community.callbacks import get_openai_callback
+
 from streamlit.components.v1 import html
 import streamlit.components.v1 as components
 from streamlit_chat import message
