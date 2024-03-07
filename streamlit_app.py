@@ -24,7 +24,7 @@ import sys
 #from langchain_community.vectorstores import Chroma
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "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"
 
 
 
