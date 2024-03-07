@@ -85,8 +85,8 @@ if pdf is not None:
   knowledge_base = FAISS.from_texts(chunks, embedding=OpenAIEmbeddings())
 
   # show user input
-  #st.text_input("Ask a question about your PDF:", key="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")
-  st.text_input("Ask a question about your PDF:")
+  st.text_input("Ask a question about your PDF:", key="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")
+  #st.text_input("Ask a question about your PDF:")
   st.button("Send", on_click=send_click)
 
    # col1.write(response)
