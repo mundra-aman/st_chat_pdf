@@ -26,7 +26,8 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
-
+if 'user' not in st.session_state:
+    st.session_state.user = ''  # Or set it to an initial value if needed
 
 if 'prompts' not in st.session_state:
     st.session_state.prompts = []
