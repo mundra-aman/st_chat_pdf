@@ -24,7 +24,7 @@ import sys
 #from langchain_community.vectorstores import Chroma
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 
 
@@ -85,7 +85,7 @@ if pdf is not None:
   knowledge_base = FAISS.from_texts(chunks, embedding=OpenAIEmbeddings())
 
   # show user input
-  st.text_input("Ask a question about your PDF:", key="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")
+  st.text_input("Ask a question about your PDF:", key=st.secrets["OPENAI_API_KEY"])
   #st.text_input("Ask a question about your PDF:")
   st.button("Send", on_click=send_click)
 
