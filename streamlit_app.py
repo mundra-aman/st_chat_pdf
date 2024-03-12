@@ -37,6 +37,14 @@ st.set_page_config(layout="wide")
 col1, col2 = st.columns([1,2])
 
 def send_click():
+    if st.session_state.user:
+        user_input = st.session_state.user
+    else:
+        # Display a message asking the user to input their name
+        st.write("Please enter your name:")
+        user_input = st.text_input("Your Name:")
+        st.session_state.user = user_input
+    
     if st.session_state.user != '':
         prompt = st.session_state.user
         if prompt:
