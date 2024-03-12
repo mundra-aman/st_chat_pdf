@@ -44,8 +44,8 @@ def send_click():
     chain = load_qa_chain(llm, chain_type="stuff")
     with get_openai_callback() as cb:
               response = chain.run(input_documents=docs, question=prompt)
-        st.session_state.prompts.append(prompt)
-        st.session_state.responses.append(response)
+    st.session_state.prompts.append(prompt)
+    st.session_state.responses.append(response)
 
     '''
     if st.session_state.user != '':
