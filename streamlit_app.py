@@ -38,8 +38,8 @@ st.set_page_config(layout="wide")
 col1, col2 = st.columns([1,2])
 
 def send_click():
-
-    docs = knowledge_base.similarity_search(st.session_state.user)
+    prompt = st.session_state.user
+    docs = knowledge_base.similarity_search(prompt)
     llm = OpenAI()
     chain = load_qa_chain(llm, chain_type="stuff")
     with get_openai_callback() as cb:
